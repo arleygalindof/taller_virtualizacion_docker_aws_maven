@@ -18,6 +18,50 @@
 - AWS EC2  
 - GitHub  
 
+Script controlador
+
+```
+//Clase controlador
+package edu.escuelaing.aygo.container;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+@RestController
+public class HelloRestController {
+    private static final String template = "Hello, %s!";
+    @GetMapping("/greeting")
+    public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return String.format(template, name);
+    }
+}
+```
+Script servicio REST
+```
+//Clase para iniciar Spring
+package edu.escuelaing.aygo.container;
+
+import static java.util.Collections.singletonMap;
+ 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RestServiceApplication {
+    public static void main(String[] args) {
+        SpringApplication app = new SpringApplication(RestServiceApplication.class);
+        app.setDefaultProperties(singletonMap("server.port", getPort()));
+        app.run(args);
+    }
+    private static int getPort() {
+        if (System.getenv("PORT") != null) {
+            return Integer.parseInt(System.getenv("PORT"));
+        }
+        return 33026;
+    }
+}
+```
+
 Ejemplo yaml
 
 ```
@@ -62,11 +106,15 @@ CMD ["java","-cp","./classes:./dependency/*","edu.escuelaing.aygo.container.Rest
 
 <img width="921" height="303" alt="image" src="https://github.com/user-attachments/assets/7012e9f9-390d-4204-88e5-928f894fb040" />
 
-##Creación de contenedor en Docker
+##Creación de Im+agenes en Docker
 
 <img width="921" height="296" alt="image" src="https://github.com/user-attachments/assets/8eb31cb6-5e18-4898-9cff-e2cae58ca018" />
 
 <img width="921" height="351" alt="image" src="https://github.com/user-attachments/assets/e0a6e217-5f23-4a1f-9983-d9b559b4815b" />
+
+Evidencia contenedores en Docker
+
+<img width="1647" height="346" alt="image" src="https://github.com/user-attachments/assets/614ea370-0079-455d-a8b2-e67471cdf65b" />
 
 ##Muestra de ejecución de página usando docker compose
 
