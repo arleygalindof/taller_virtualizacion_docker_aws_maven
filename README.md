@@ -1,4 +1,4 @@
-# Taller AYGO - Virtualización Docker AWS Maven# 📘 Título del proyecto
+# Taller AYGO - Virtualización Docker AWS Maven# 📘
 
 *Taller AYGO - Arquitectura y Gobernabilidad Tecnológica*
 
