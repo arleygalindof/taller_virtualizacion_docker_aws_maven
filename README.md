@@ -89,7 +89,7 @@ volumes:
     mongodb_config:
 ```
 
-Ejemplo DockerFile
+#Ejemplo DockerFile
 
 ```
 FROM openjdk:17
@@ -99,20 +99,26 @@ COPY /target/classes /usrapp/bin/classes
 COPY /target/dependency /usrapp/bin/dependency
 CMD ["java","-cp","./classes:./dependency/*","edu.escuelaing.aygo.container.RestServiceApplication"]
 ```
+### Arquitectura
+
+# El proyecto tiene una arquitectura basada en Spring Boot, usa maven para gestionar dependencias y utiliza una api Rest. Maneja las peticiones desde el navegador, se versiona a traves de Git y se sube al repositorio de github, también utiliza contenedor docker que se aloja en un repositorio de DockerHub.
+
+<img width="618" height="348" alt="image" src="https://github.com/user-attachments/assets/ebc44847-f8c1-4638-9057-9c7c417b6e00" />
+
 
 ### Evidencias instalación
 
-##docker build --tag dockerspringprimer .
+## Docker build --tag dockerspringprimer .
 
 <img width="921" height="303" alt="image" src="https://github.com/user-attachments/assets/7012e9f9-390d-4204-88e5-928f894fb040" />
 
-##Creación de Im+agenes en Docker
+## Creación de Im+agenes en Docker
 
 <img width="921" height="296" alt="image" src="https://github.com/user-attachments/assets/8eb31cb6-5e18-4898-9cff-e2cae58ca018" />
 
 <img width="921" height="351" alt="image" src="https://github.com/user-attachments/assets/e0a6e217-5f23-4a1f-9983-d9b559b4815b" />
 
-Evidencia contenedores en Docker
+## Evidencia contenedores en Docker
 
 <img width="1647" height="346" alt="image" src="https://github.com/user-attachments/assets/614ea370-0079-455d-a8b2-e67471cdf65b" />
 
@@ -120,12 +126,12 @@ Evidencia contenedores en Docker
 
 <img width="921" height="166" alt="image" src="https://github.com/user-attachments/assets/8db6be16-52a2-4b1d-8e12-76e7e8ef89ea" />
 
-##Creación de repositorio en dockerHub
+## Creación de repositorio en dockerHub
 
 <img width="921" height="345" alt="image" src="https://github.com/user-attachments/assets/2d9b88b6-6bf4-445d-98ca-97159d6e1b75" />
 
 
-##Creación Máquina virtual en AWS
+## Creación Máquina virtual en AWS
 
 <img width="921" height="321" alt="image" src="https://github.com/user-attachments/assets/ab313762-e4f6-44be-af14-725132b1d59e" />
 
@@ -133,23 +139,23 @@ Evidencia contenedores en Docker
 
 <img width="921" height="454" alt="image" src="https://github.com/user-attachments/assets/9192b30c-7c10-4833-a819-478dc2180e08" />
 
-##Muestra de instancia en ejecución
+## Muestra de instancia en ejecución
 
 <img width="921" height="235" alt="image" src="https://github.com/user-attachments/assets/d1958bd5-0b62-413b-8411-3545d543a921" />
 
-##Envío contenerod de dockerHub a AWS
+## Envío contenerod de dockerHub a AWS
 
 <img width="921" height="469" alt="image" src="https://github.com/user-attachments/assets/b795cbb6-1019-4565-9c0c-551b85b8f479" />
 
-##Agregación de puerto 42000
+## Agregación de puerto 42000
 
 <img width="921" height="200" alt="image" src="https://github.com/user-attachments/assets/a70011cc-af19-4429-b31c-bfb676bf67de" />
 
-##Muestra de página funcionando con AWS utilizando el contenedor alojado en DockerHub
+## Muestra de página funcionando con AWS utilizando el contenedor alojado en DockerHub
 
 <img width="921" height="227" alt="image" src="https://github.com/user-attachments/assets/42438d88-af98-4314-a369-33da2c8e28c5" />
 
-##URL de AWS del taller
+## URL de AWS del taller
 
 http://ec2-54-204-130-61.compute-1.amazonaws.com:42000/greeting?name=Arley
 
